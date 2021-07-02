@@ -16,8 +16,8 @@ class NewsRepoImpl implements NewsRepo {
   @override
   Future<List<Article>> getNewsHeadline() async {
     try {
-      final response =
-          await _httpService.getRequest("/v2/top-headlines?country=us");
+      final response = await _httpService.getRequest(
+          "https://newsapi.org/v2/top-headlines?country=us&apiKey=5fba7de521434971b0d9a516eef733ae");
       final parsedResponse = NewsResponse.fromJson(response.data);
       return parsedResponse.articles;
     } on Exception catch (e) {
@@ -29,7 +29,8 @@ class NewsRepoImpl implements NewsRepo {
   @override
   Future<List<Article>> getSearchedNews(String query) async {
     try {
-      final response = await _httpService.getRequest("/v2/everything?q=$query");
+      final response = await _httpService.getRequest(
+          "https://newsapi.org/v2/everything?q=$query&apiKey=5fba7de521434971b0d9a516eef733ae");
       final parsedResponse = NewsResponse.fromJson(response.data);
       return parsedResponse.articles;
     } on Exception catch (e) {

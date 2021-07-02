@@ -15,37 +15,39 @@ class NewsHeadlineView extends StatelessWidget {
       ),
       drawer: getAppDrawer(),
       body: Obx(() {
-        return controller.isLoading.isTrue
-            ? Center(
-                child: CircularProgressIndicator(),
-              )
-            : Container(
-                margin: const EdgeInsets.all(10),
-                child: ListView.separated(
-                    itemBuilder: (context, index) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          if (controller.articles[index].imageUrl == null)
-                            Container()
-                          else
-                            Image.network(controller.articles[index].imageUrl),
-                          SizedBox(height: 8),
-                          Text(
-                            controller.articles[index].title,
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w600),
-                          ),
-                          SizedBox(height: 4),
-                          Text(
-                            controller.articles[index].desc,
-                          ),
-                        ],
-                      );
-                    },
-                    separatorBuilder: (context, index) => Divider(),
-                    itemCount: controller.articles.length),
-              );
+        if (controller.isLoading.isTrue) {
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        } else {
+          return Container(
+            margin: const EdgeInsets.all(10),
+            child: ListView.separated(
+                itemBuilder: (context, index) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (controller.articles[index].imageUrl == null)
+                        Container()
+                      else
+                        Image.network(controller.articles[index].imageUrl),
+                      SizedBox(height: 8),
+                      Text(
+                        controller.articles[index].title,
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w600),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        controller.articles[index].desc,
+                      ),
+                    ],
+                  );
+                },
+                separatorBuilder: (context, index) => Divider(),
+                itemCount: controller.articles.length),
+          );
+        }
       }),
     );
   }

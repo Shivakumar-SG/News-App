@@ -20,12 +20,11 @@ class HttpServiceImpl implements HttpService {
   }
 
   initializeInterceptor() {
-    _dio.interceptors
-        .add(InterceptorsWrapper(onError: (error, errorInterceptorHandler) {
+    _dio.interceptors.add(InterceptorsWrapper(onError: (error) {
       print(error.message);
-    }, onRequest: (request, requestInterceptorHandler) {
+    }, onRequest: (request) {
       print("${request.method} | ${request.path}");
-    }, onResponse: (response, responseInterceptorHandler) {
+    }, onResponse: (response) {
       print(
           "${response.statusCode} ${response.statusMessage} ${response.data}");
     }));
