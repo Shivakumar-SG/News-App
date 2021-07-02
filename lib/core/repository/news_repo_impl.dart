@@ -17,7 +17,7 @@ class NewsRepoImpl implements NewsRepo {
   Future<List<Article>> getNewsHeadline() async {
     try {
       final response =
-          await _httpService.getRequest("/v2/top-headlines?country=in");
+          await _httpService.getRequest("/v2/top-headlines?country=us");
       final parsedResponse = NewsResponse.fromJson(response.data);
       return parsedResponse.articles;
     } on Exception catch (e) {
