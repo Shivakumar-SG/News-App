@@ -1,16 +1,17 @@
 # news_app
 
-A new Flutter project.
+A flutter based news application which fetches news from real time news API.
 
-## Getting Started
+## Single Code Base
 
-This project is a starting point for a Flutter application.
+A single code base to run the app over
+###-IOS
+###-Android
+![Screenshot_1625247639](https://user-images.githubusercontent.com/47275182/124312371-d0ce0880-db8c-11eb-9832-1194a244df41.png), ![Screenshot_1625247872](https://user-images.githubusercontent.com/47275182/124312400-dc213400-db8c-11eb-82a7-3838d17c231a.png)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+###-Website
+![Screenshot 2021-07-02 at 11 06 25 PM](https://user-images.githubusercontent.com/47275182/124312321-bb58de80-db8c-11eb-9fb5-1706a6308583.png)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
